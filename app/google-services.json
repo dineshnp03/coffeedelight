@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1082728696539",
+    "firebase_url": "https://coffeedelight-af505-default-rtdb.firebaseio.com",
+    "project_id": "coffeedelight-af505",
+    "storage_bucket": "coffeedelight-af505.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082728696539:android:4f7765a364a3dbdcf99afe",
+        "android_client_info": {
+          "package_name": "com.project1.coffeedelight"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs4FNmVglDJkv6plI3kXiWTv29KD8zZa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
