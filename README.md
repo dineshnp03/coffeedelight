@@ -9,6 +9,7 @@ At this point you should have: Firebase set up correctly; All necessary activiti
 You should be prepared to show your professor this progress by the check in, and each group member should discuss exactly what they did for the project so far.
 
 What is Finished:
+
 Dinesh:
 1) Created the Firebase project
 2) Connected the local project with that
