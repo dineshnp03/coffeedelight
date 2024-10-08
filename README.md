@@ -16,3 +16,7 @@ What is Finished:
 4) added image files in the storage
 5) Added Products collection in the Realtime database in Firebase.
 6) 
+
+
+Rajesh
+10-06-2024 -> Added Recycler View To display the product detials using CardView
