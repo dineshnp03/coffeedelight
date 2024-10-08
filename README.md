@@ -1,8 +1,8 @@
-About the Application:
+**About the Application:**
 
 The Android application is inital phase application is all about acting as a whole sale/Retail for the customer to get the different variety of coffee beans based on their taste. This application is an initial phase, will update further more, to make it act as a facilitator in the future. 
 
-Tech Stack:
+**Tech Stack:**
 
 Kotlin+java based Android application.
 Firebase for the Database storage and Authentication.
@@ -10,7 +10,7 @@ Git for the Version Control.
 
 
 
-Project 1  - Part 1 Submission :
+**Project 1  - Part 1 Submission :**
 
 You are not required to submit anything to this Assignments folder, it is here to allow your instructor to mark your in-person check in.
 
