@@ -9,14 +9,21 @@ At this point you should have: Firebase set up correctly; All necessary activiti
 You should be prepared to show your professor this progress by the check in, and each group member should discuss exactly what they did for the project so far.
 
 What is Finished:
-
+Dinesh:
 1) Created the Firebase project
 2) Connected the local project with that
 3) Storage, Database, Glide implementations added in Gradle script
 4) added image files in the storage
 5) Added Products collection in the Realtime database in Firebase.
-6) 
+6) Added Welcome note to the Main Page.
 
 
-Rajesh
+Rajesh:
 10-06-2024 -> Added Recycler View To display the product detials using CardView
+
+Sakar: 
+Added the Signup, Login XML files, Drawable files.
+Strings.xml and colour.xml files
+
+Dinesh: 
+Added the Intent for login and signup page.
