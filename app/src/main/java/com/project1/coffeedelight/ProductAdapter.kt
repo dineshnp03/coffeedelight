@@ -1,5 +1,7 @@
 package com.project1.coffeedelight
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
 
-class ProductAdapter(private val productList: List<Product>) :
+class ProductAdapter(private val productList: List<Product>,private val context: Context) :
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,6 +40,17 @@ class ProductAdapter(private val productList: List<Product>) :
         }.addOnFailureListener {
             // Handle error: set a default image or error image
             exception -> Log.e("ProductAdapter", "Error occurred while loading image: ${exception.message}")
+        }
+
+        // Set item click listener to open ProductDetailActivity
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ProductDetailActivity::class.java).apply {
+                putExtra("name", product.name)
+                putExtra("descriptionDetail", product.descriptionDetail)
+                putExtra("price", product.price)
+                putExtra("imgUrl", product.imgUrl)
+            }
+            context.startActivity(intent)
         }
     }
 
