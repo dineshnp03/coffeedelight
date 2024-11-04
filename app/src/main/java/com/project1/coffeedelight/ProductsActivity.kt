@@ -37,7 +37,7 @@ class ProductsActivity : AppCompatActivity() {
                         productList.add(product)
                     }
                 }
-                productAdapter = ProductAdapter(productList)
+                productAdapter = ProductAdapter(productList,this@ProductsActivity)
                 recyclerView.adapter = productAdapter
             }
 

@@ -10,7 +10,11 @@
     <string name="enter_password">Enter password</string>
     <string name="enter_email">Enter Email Address</string>
     <string name="already_user">Already a user? Login</string>
-    <string name="new_user">New user? Signup</string>
+    <string name="new_user">New user? Register</string>
     <string name="shop_now">Shop Now</string>
     <string name="welcome_note">Welcome to Coffee Delight!</string>
+    <string name="register">Register</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_registered_login">Already Registered? Login</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>

@@ -43,6 +43,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    // Import the BoM for the Firebase platform
+    implementation(platform(libs.firebase.bom))
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation(libs.google.firebase.auth)
     implementation(libs.firebase.database)
     // https://mvnrepository.com/artifact/com.firebaseui/firebase-ui-storage
     implementation(libs.firebase.ui.storage)
@@ -51,6 +56,7 @@ dependencies {
     implementation(libs.firebase.storage)
     // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
     implementation(libs.glide)
+    implementation(libs.firebase.auth)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
