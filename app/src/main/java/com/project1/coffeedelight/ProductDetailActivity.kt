@@ -75,6 +75,18 @@ class ProductDetailActivity : AppCompatActivity() {
         // Handle Add to Cart and Go to Cart actions
         buttonAddToCart.setOnClickListener {
             // Code to add the item with quantity to cart
+            // Create a Product object
+            // Create a Product object with non-null values
+            val product = Product(
+                name ?: "Unknown Product", // Provide a default name if null
+                descriptionDetail ?: "",    // Default to an empty string if null
+                price,                      // Price can remain as is since it's a Double
+                imgUrl ?: "",               // Default to an empty string if null
+                descriptionDetail ?: ""      // You may want to use a different default for descriptionDetail
+            )
+
+            // Add the Product to the cart with the specified quantity
+            CartManager.addItemToCart(product, quantity)
             Toast.makeText(this, "$name added to cart", Toast.LENGTH_SHORT).show()
         }
 

@@ -7,4 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".CartActivity">
 
+    <!-- RecyclerView for displaying cart items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCartItems"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/summaryContainer"
+        android:padding="8dp"
+        tools:listitem="@layout/item_cart" />
+
+    <!-- Summary Container (Total, Tax, Bill) -->
+    <LinearLayout
+        android:id="@+id/summaryContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCheckout">
+
+        <!-- Total Amount -->
+        <TextView
+            android:id="@+id/textViewTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: $0.00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Tax Amount -->
+        <TextView
+            android:id="@+id/textViewTax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tax (10%): $0.00"
+            android:textSize="16sp" />
+
+        <!-- Final Bill Amount -->
+        <TextView
+            android:id="@+id/textViewBill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bill: $0.00"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Checkout Button -->
+    <Button
+        android:id="@+id/buttonCheckout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Checkout"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
