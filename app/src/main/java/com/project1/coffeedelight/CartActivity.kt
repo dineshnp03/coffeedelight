@@ -16,7 +16,7 @@ class CartActivity : AppCompatActivity() {
     private lateinit var textViewBill: TextView
     private lateinit var buttonCheckout: Button
     private lateinit var cartAdapter: CartAdapter
-    private val cartItemList = CartManager.getCartItems()
+    private val cartItemList = CartManager.getCartItems().toMutableList()
 
     private val TAX_RATE = 0.10  // 10% tax rate
 
@@ -29,9 +29,7 @@ class CartActivity : AppCompatActivity() {
         textViewTax = findViewById(R.id.textViewTax)
         textViewBill = findViewById(R.id.textViewBill)
         buttonCheckout = findViewById(R.id.buttonCheckout)
-
-
-        cartAdapter = CartAdapter(this, cartItemList) { updateSummary() }
+        cartAdapter = CartAdapter(this, cartItemList) { refreshCartItems() }
         recyclerViewCartItems.layoutManager = LinearLayoutManager(this)
         recyclerViewCartItems.adapter = cartAdapter
 
@@ -40,7 +38,6 @@ class CartActivity : AppCompatActivity() {
         buttonCheckout.setOnClickListener {
             // Start CheckoutActivity
 //            startActivity(Intent(this, CheckoutActivity::class.java))
-
         }
     }
 
@@ -53,5 +50,12 @@ class CartActivity : AppCompatActivity() {
         textViewTotal.text = "Total: $${"%.2f".format(totalAmount)}"
         textViewTax.text = "Tax (10%): $${"%.2f".format(taxAmount)}"
         textViewBill.text = "Bill: $${"%.2f".format(finalBill)}"
+    }
+
+    fun refreshCartItems() {
+        cartItemList.clear() // Clear the old list
+        cartItemList.addAll(CartManager.getCartItems()) // Update with current cart items
+        cartAdapter.notifyDataSetChanged() // Notify adapter of changes
+        updateSummary() // Refresh summary after item removal
     }
 }

@@ -46,6 +46,7 @@ class ProductAdapter(private val productList: List<Product>,private val context:
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ProductDetailActivity::class.java).apply {
                 putExtra("name", product.name)
+                putExtra("description", product.description)
                 putExtra("descriptionDetail", product.descriptionDetail)
                 putExtra("price", product.price)
                 putExtra("imgUrl", product.imgUrl)

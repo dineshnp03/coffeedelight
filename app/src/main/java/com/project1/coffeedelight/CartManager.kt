@@ -1,5 +1,7 @@
 package com.project1.coffeedelight
 
+import android.util.Log
+
 object CartManager {
     private val cartItemList = mutableListOf<CartItem>()
 
@@ -18,7 +20,12 @@ object CartManager {
     fun getCartItems(): List<CartItem> = cartItemList.toList()
 
     fun removeItemFromCart(cartItem: CartItem) {
-        cartItemList.remove(cartItem)
+//        cartItemList.remove(cartItem)
+        if (cartItemList.remove(cartItem)) {
+            Log.d("CartManager", "Removed item: ${cartItem.product.name}")
+        } else {
+            Log.d("CartManager", "Item not found: ${cartItem.product.name}")
+        }
     }
 
     fun clearCart() {

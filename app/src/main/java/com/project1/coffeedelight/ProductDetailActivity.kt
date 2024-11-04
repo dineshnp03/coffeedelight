@@ -32,6 +32,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
         // Retrieve data from intent
         val name = intent.getStringExtra("name")
+        val description = intent.getStringExtra("description")
         val descriptionDetail = intent.getStringExtra("descriptionDetail")
         val price = intent.getDoubleExtra("price", 0.0)
         val imgUrl = intent.getStringExtra("imgUrl")
@@ -76,10 +77,9 @@ class ProductDetailActivity : AppCompatActivity() {
         buttonAddToCart.setOnClickListener {
             // Code to add the item with quantity to cart
             // Create a Product object
-            // Create a Product object with non-null values
             val product = Product(
                 name ?: "Unknown Product", // Provide a default name if null
-                descriptionDetail ?: "",    // Default to an empty string if null
+                description ?: "",    // Default to an empty string if null
                 price,                      // Price can remain as is since it's a Double
                 imgUrl ?: "",               // Default to an empty string if null
                 descriptionDetail ?: ""      // You may want to use a different default for descriptionDetail
