@@ -4,14 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 
 class ProductDetailActivity : AppCompatActivity() {
@@ -94,6 +94,22 @@ class ProductDetailActivity : AppCompatActivity() {
             // Code to navigate to the CartActivity
             val cartIntent = Intent(this, CartActivity::class.java)
             startActivity(cartIntent)
+        }
+
+
+        val logoutButton: ImageButton = findViewById(R.id.img_logout)
+        val goToCartButton: ImageButton = findViewById(R.id.img_goto_cart)
+        // Logout Function
+        logoutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            // Redirect to login activity
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+        // Go to Cart function
+        goToCartButton.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
         }
     }
 }

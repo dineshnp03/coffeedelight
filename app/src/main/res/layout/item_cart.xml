@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,6 +10,7 @@
         android:id="@+id/imageViewProduct"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:contentDescription="@string/productimage"
         android:scaleType="centerCrop" />
 
     <TextView
@@ -37,7 +39,8 @@
             android:id="@+id/buttonDecreaseQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="-" />
+            android:backgroundTint="@color/bg_color"
+            android:text="@string/minus" />
 
         <TextView
             android:id="@+id/textViewProductQuantity"
@@ -45,14 +48,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="1"
+            android:backgroundTint="@color/bg_color"
+            android:text="@string/one"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/buttonIncreaseQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+" />
+            android:backgroundTint="@color/bg_color"
+            android:text="@string/plus" />
 
         <!-- Add a space with weight to push the Remove button to the end -->
         <View
@@ -64,7 +69,9 @@
             android:id="@+id/buttonRemoveItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Remove" />
+            android:backgroundTint="@color/bg_color"
+            android:text="@string/remove"
+            app:cornerRadius="8dp" />
     </LinearLayout>
 
 </LinearLayout>

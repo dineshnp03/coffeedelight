@@ -2,11 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    android:padding="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -14,26 +16,32 @@
             android:id="@+id/imgProduct"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:contentDescription="@string/productimage"
+            android:paddingBottom="5dp"
             android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/txtProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Product Name"
-            android:textStyle="bold"
-            android:textSize="16sp" />
+            android:padding="5dp"
+            android:text="@string/product_name"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtProductDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Product Description" />
+            android:padding="5dp"
+            android:text="@string/product_description" />
 
         <TextView
             android:id="@+id/txtProductPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$0.00" />
+            android:padding="5dp"
+            android:text="@string/_0_00"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

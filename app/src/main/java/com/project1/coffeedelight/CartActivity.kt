@@ -18,7 +18,7 @@ class CartActivity : AppCompatActivity() {
     private lateinit var cartAdapter: CartAdapter
     private val cartItemList = CartManager.getCartItems().toMutableList()
 
-    private val TAX_RATE = 0.10  // 10% tax rate
+    private val TAX_RATE = 0.13  // 13% tax rate
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +36,7 @@ class CartActivity : AppCompatActivity() {
         updateSummary()
 
         buttonCheckout.setOnClickListener {
-            // Start CheckoutActivity
-//            startActivity(Intent(this, CheckoutActivity::class.java))
+            startActivity(Intent(this, CheckoutActivity::class.java))
         }
     }
 
@@ -48,7 +47,7 @@ class CartActivity : AppCompatActivity() {
 
         // Use string interpolation for better readability and to avoid format issues
         textViewTotal.text = "Total: $${"%.2f".format(totalAmount)}"
-        textViewTax.text = "Tax (10%): $${"%.2f".format(taxAmount)}"
+        textViewTax.text = "Tax (13%): $${"%.2f".format(taxAmount)}"
         textViewBill.text = "Bill: $${"%.2f".format(finalBill)}"
     }
 

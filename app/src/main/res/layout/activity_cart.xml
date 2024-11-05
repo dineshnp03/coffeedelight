@@ -7,19 +7,72 @@
     android:layout_height="match_parent"
     tools:context=".CartActivity">
 
-    <!-- RecyclerView for displaying cart items -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCartItems"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <!-- Toolbar with Logout and Go to Cart -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_color"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/summaryContainer"
-        android:padding="8dp"
-        tools:listitem="@layout/item_cart" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+            <ImageButton
+                android:id="@+id/img_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@color/bg_color"
+                android:contentDescription="@string/logout"
+                android:padding="10dp"
+                android:src="@drawable/logout" />
+
+            <ImageButton
+                android:id="@+id/img_goto_cart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/img_logout"
+                android:background="@color/bg_color"
+                android:contentDescription="@string/go_to_cart"
+                android:padding="10dp"
+                android:src="@drawable/coffee" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!-- RecyclerView for displaying cart items -->
 
     <!-- Summary Container (Total, Tax, Bill) -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCartItems"
+        android:layout_width="match_parent"
+        android:layout_height="765dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/summaryContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/item_cart" />
+
     <LinearLayout
         android:id="@+id/summaryContainer"
         android:layout_width="0dp"
@@ -35,7 +88,7 @@
             android:id="@+id/textViewTotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Total: $0.00"
+            android:text="@string/total_0_00"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -44,7 +97,7 @@
             android:id="@+id/textViewTax"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tax (10%): $0.00"
+            android:text="@string/tax_13_0_00"
             android:textSize="16sp" />
 
         <!-- Final Bill Amount -->
@@ -52,7 +105,7 @@
             android:id="@+id/textViewBill"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bill: $0.00"
+            android:text="@string/bill_0_00"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -62,11 +115,15 @@
         android:id="@+id/buttonCheckout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Checkout"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/bg_color"
+        android:text="@string/checkout"
+        app:cornerRadius="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
