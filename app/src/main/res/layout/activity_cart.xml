@@ -41,17 +41,6 @@
                 android:contentDescription="@string/logout"
                 android:padding="10dp"
                 android:src="@drawable/logout" />
-
-            <ImageButton
-                android:id="@+id/img_goto_cart"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:layout_toStartOf="@id/img_logout"
-                android:background="@color/bg_color"
-                android:contentDescription="@string/go_to_cart"
-                android:padding="10dp"
-                android:src="@drawable/coffee" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 

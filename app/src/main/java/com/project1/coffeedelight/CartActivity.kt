@@ -3,10 +3,12 @@ package com.project1.coffeedelight
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 
 class CartActivity : AppCompatActivity() {
 
@@ -37,6 +39,15 @@ class CartActivity : AppCompatActivity() {
 
         buttonCheckout.setOnClickListener {
             startActivity(Intent(this, CheckoutActivity::class.java))
+        }
+
+        val logoutButton: ImageButton = findViewById(R.id.img_logout)
+        // Logout Function
+        logoutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            // Redirect to login activity
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 
