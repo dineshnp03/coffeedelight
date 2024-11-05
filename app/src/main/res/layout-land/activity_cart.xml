@@ -23,16 +23,12 @@
             android:id="@+id/back_arrow"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
             android:background="@color/bg_color"
             android:contentDescription="@string/back"
             android:padding="8dp"
-            android:layout_marginEnd="8dp"
             android:src="@drawable/arrow_back"
-            tools:ignore="TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="7dp" />
+            tools:ignore="TouchTargetSizeCheck" />
+
         <TextView
             android:id="@+id/productName"
             android:layout_width="wrap_content"
@@ -50,8 +46,6 @@
                 android:id="@+id/img_logout"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:background="@color/bg_color"
                 android:contentDescription="@string/logout"
                 android:padding="10dp"
@@ -59,33 +53,29 @@
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
-
     <!-- RecyclerView for displaying cart items -->
-
-    <!-- Summary Container (Total, Tax, Bill) -->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCartItems"
-        android:layout_width="match_parent"
-        android:layout_height="765dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@id/summaryContainer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/summaryContainer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         tools:listitem="@layout/item_cart" />
 
+    <!-- Summary Container (Total, Tax, Bill) -->
     <LinearLayout
         android:id="@+id/summaryContainer"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCheckout">
+        app:layout_constraintStart_toEndOf="@id/recyclerViewCartItems"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <!-- Total Amount -->
         <TextView
@@ -112,22 +102,15 @@
             android:text="@string/bill_0_00"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <!-- Checkout Button -->
+        <Button
+            android:id="@+id/buttonCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/bg_color"
+            android:text="@string/checkout"
+            app:cornerRadius="8dp" />
     </LinearLayout>
-
-    <!-- Checkout Button -->
-    <Button
-        android:id="@+id/buttonCheckout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/bg_color"
-        android:text="@string/checkout"
-        app:cornerRadius="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
