@@ -6,13 +6,13 @@ object CartManager {
     private val cartItemList = mutableListOf<CartItem>()
 
     fun addItemToCart(product: Product, quantity: Int) {
-        // Check if the product already exists in the cart
+        // Checking if the product already exists in the cart
         val existingCartItem = cartItemList.find { it.product.name == product.name }
         if (existingCartItem != null) {
             // Update quantity if product exists
             existingCartItem.quantity += quantity
         } else {
-            // Add new item if product is not in the cart
+            // Adding new item if product is not in the cart
             cartItemList.add(CartItem(product, quantity))
         }
     }

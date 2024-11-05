@@ -40,7 +40,7 @@ class CartAdapter(
             Glide.with(holder.itemView.context).load(uri).into(holder.imageViewProduct)
 
         }.addOnFailureListener {
-            // Handle error: set a default image or error image
+            // Handling the error and throwing the exception
                 exception -> Log.e("ProductAdapter", "Error occurred while loading image: ${exception.message}")
         }
 

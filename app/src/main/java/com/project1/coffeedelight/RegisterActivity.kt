@@ -30,7 +30,7 @@ class RegisterActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // Apply window insets to the root layout
+        // Applying window insets to the root layout
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.registerLayout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -64,7 +64,7 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
-        // Create a new user with Firebase Authentication
+        // Creating a new user with Firebase Authentication
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) {
             task -> if (task.isSuccessful) {
                     // Sign in success
@@ -78,14 +78,12 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser(email: String, password: String): Boolean {
-        // Placeholder for registration logic
-        // Replace with actual logic to save user details to database or backend
-        return true // Return true for successful registration, otherwise false
+        return true // Return true for successful registration
     }
 
     private fun navigateToLogin() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
-        finish() // Close RegisterActivity so user can't return to it
+        finish()
     }
 }

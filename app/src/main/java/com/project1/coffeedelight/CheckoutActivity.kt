@@ -74,7 +74,7 @@ class CheckoutActivity : AppCompatActivity() {
     ): Boolean {
         var isValid = true
 
-        // Validate each field and show errors if needed
+        // Validating all the fields
         if (cardNumberEditText.text.toString().trim().length != 16) {
             cardNumberEditText.error = "Enter a valid 16-digit card number"
             isValid = false

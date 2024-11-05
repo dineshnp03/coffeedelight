@@ -74,16 +74,15 @@ class CartActivity : AppCompatActivity() {
         val taxAmount = totalAmount * TAX_RATE
         val finalBill = totalAmount + taxAmount
 
-        // Use string interpolation for better readability and to avoid format issues
         textViewTotal.text = "Total: $${"%.2f".format(totalAmount)}"
         textViewTax.text = "Tax (13%): $${"%.2f".format(taxAmount)}"
         textViewBill.text = "Bill: $${"%.2f".format(finalBill)}"
     }
 
     fun refreshCartItems() {
-        cartItemList.clear() // Clear the old list
-        cartItemList.addAll(CartManager.getCartItems()) // Update with current cart items
-        cartAdapter.notifyDataSetChanged() // Notify adapter of changes
-        updateSummary() // Refresh summary after item removal
+        cartItemList.clear()
+        cartItemList.addAll(CartManager.getCartItems())
+        cartAdapter.notifyDataSetChanged()
+        updateSummary()
     }
 }

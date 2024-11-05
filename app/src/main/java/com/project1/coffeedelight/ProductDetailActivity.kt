@@ -42,7 +42,7 @@ class ProductDetailActivity : AppCompatActivity() {
         textViewProductDescriptionDetail.text = descriptionDetail
         textViewProductPriceDetail.text = "$${price}"
 
-        // Load the image using Glide or similar library
+        // Loading the image using Glide or similar library
         if (imgUrl != null) {
             val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(imgUrl)
             storageReference.downloadUrl.addOnSuccessListener { uri ->
@@ -57,7 +57,7 @@ class ProductDetailActivity : AppCompatActivity() {
             Log.e("ProductDetailActivity", "Image URL is null")
         }
 
-        // Handle quantity changes
+        // Handlign quantity changes
         var quantity = 1
         textViewQuantity.text = quantity.toString()
 
@@ -73,16 +73,15 @@ class ProductDetailActivity : AppCompatActivity() {
             }
         }
 
-        // Handle Add to Cart and Go to Cart actions
+        // Handling Add to Cart and Go to Cart actions
         buttonAddToCart.setOnClickListener {
-            // Code to add the item with quantity to cart
             // Create a Product object
             val product = Product(
-                name ?: "Unknown Product", // Provide a default name if null
-                description ?: "",    // Default to an empty string if null
-                price,                      // Price can remain as is since it's a Double
-                imgUrl ?: "",               // Default to an empty string if null
-                descriptionDetail ?: ""      // You may want to use a different default for descriptionDetail
+                name ?: "Unknown Product",
+                description ?: "",
+                price,
+                imgUrl ?: "",
+                descriptionDetail ?: ""
             )
 
             // Add the Product to the cart with the specified quantity
