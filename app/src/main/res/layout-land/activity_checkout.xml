@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- Toolbar with Logout and Go to Cart -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bg_color"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:elevation="4dp">
+
+            <ImageButton
+                android:id="@+id/back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="@color/bg_color"
+                android:contentDescription="@string/back"
+                android:padding="8dp"
+                android:src="@drawable/arrow_back"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_gravity="start"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end">
+
+                <ImageButton
+                    android:id="@+id/img_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:src="@drawable/logout"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/bg_color"
+                    android:padding="10dp"
+                    android:contentDescription="@string/logout" />
+
+                <ImageButton
+                    android:id="@+id/img_goto_cart"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/coffee"
+                    android:background="@color/bg_color"
+                    android:layout_toStartOf="@id/img_logout"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:contentDescription="@string/go_to_cart" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fill_it_your_details"
+            android:textSize="28sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/bg_color"
+            android:layout_marginTop="16sp"
+            android:layout_marginBottom="16sp"/>
+
+        <EditText
+            android:id="@+id/cardNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textColorHint="@color/bg_color"
+            android:hint="@string/card_number"
+            android:maxLength="16"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/cardHolderNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textColorHint="@color/bg_color"
+            android:hint="@string/cardholder_name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/expiryDateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textColorHint="@color/bg_color"
+            android:hint="@string/expiry_date_mm_yy"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/cvvEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textColorHint="@color/bg_color"
+            android:hint="@string/cvv"
+            android:maxLength="3"
+            android:inputType="numberPassword" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textColorHint="@color/bg_color"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textColorHint="@color/bg_color"
+            android:hint="@string/phone_number"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/addressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:hint="@string/address"
+            android:textColorHint="@color/bg_color"
+            android:inputType="textPostalAddress" />
+
+        <EditText
+            android:id="@+id/cityEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:hint="@string/city"
+            android:textColorHint="@color/bg_color"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/zipCodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textColorHint="@color/bg_color"
+            android:hint="@string/zip_code"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/stateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColorHint="@color/bg_color"
+            android:layout_marginTop="8dp"
+            android:autofillHints="false"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:hint="@string/state"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/bg_color"
+            android:text="@string/place_order"
+            app:cornerRadius="8dp" />
+
+
+    </LinearLayout>
+
+</ScrollView>
