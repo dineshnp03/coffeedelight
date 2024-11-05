@@ -38,14 +38,13 @@
         android:id="@+id/cardView"
         android:layout_width="350dp"
         android:layout_height="400dp"
-        android:layout_marginTop="-40dp"
+        android:background="@color/white"
         app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        android:background="@color/white">
+        app:cardElevation="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="466dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="24dp">
@@ -64,52 +63,52 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
+                android:autofillHints="emailAddress"
                 android:drawableStart="@drawable/account"
                 android:drawablePadding="10dp"
                 android:drawableTint="@color/bg_color"
-                android:autofillHints="emailAddress"
                 android:hint="@string/enter_email"
-                android:textColorHint="@color/bg_color"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/bg_color" />
 
             <EditText
                 android:id="@+id/textPasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
+                android:autofillHints="password"
                 android:drawableStart="@drawable/key_password"
                 android:drawablePadding="10dp"
                 android:drawableTint="@color/bg_color"
-                android:autofillHints="password"
                 android:hint="@string/enter_password"
-                android:textColorHint="@color/bg_color"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorHint="@color/bg_color" />
 
             <EditText
                 android:id="@+id/textConfirmPasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
+                android:autofillHints="password"
                 android:drawableStart="@drawable/key_password"
                 android:drawablePadding="10dp"
                 android:drawableTint="@color/bg_color"
-                android:autofillHints="password"
                 android:hint="@string/confirm_password"
-                android:textColorHint="@color/bg_color"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorHint="@color/bg_color" />
 
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:backgroundTint="@color/bg_color"
                 android:text="@string/register"
                 app:cornerRadius="8dp" />
 
             <TextView
                 android:id="@+id/linkRegister"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:text="@string/already_registered_login"
                 android:textAlignment="center"
