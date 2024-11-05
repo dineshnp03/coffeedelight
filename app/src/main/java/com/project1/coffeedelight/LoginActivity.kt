@@ -61,7 +61,7 @@ class LoginActivity: AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success
                     Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                    navigateToProductsActivity() // Navigate to ProductsActivity after successful login
+                    navigateToProductsActivity()
                 } else {
                     // If sign in fails, display a message to the user
                     Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -72,12 +72,12 @@ class LoginActivity: AppCompatActivity() {
     private fun navigateToProductsActivity() {
         val intent = Intent(this, ProductsActivity::class.java)
         startActivity(intent)
-        finish() // Close LoginActivity so user can't go back to it
+        finish()
     }
 
     private fun navigateToRegister() {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
-        finish() // Close LoginActivity so user can't go back to it
+        finish()
     }
 }

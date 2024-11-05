@@ -97,6 +97,11 @@ class ProductDetailActivity : AppCompatActivity() {
         }
 
 
+        // Navigates back to the previous Activity
+        val backButton = findViewById<ImageButton>(R.id.back_arrow)
+        backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
         val logoutButton: ImageButton = findViewById(R.id.img_logout)
         val goToCartButton: ImageButton = findViewById(R.id.img_goto_cart)
         // Logout Function

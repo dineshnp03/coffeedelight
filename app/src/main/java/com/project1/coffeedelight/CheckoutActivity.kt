@@ -3,7 +3,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class CheckoutActivity : AppCompatActivity() {
 
@@ -34,6 +36,26 @@ class CheckoutActivity : AppCompatActivity() {
                 startActivity(Intent(this, ThanksActivity::class.java))
                 finish()
             }
+        }
+
+        // Navigates back to the previous Activity
+        val backButton = findViewById<ImageButton>(R.id.back_arrow)
+        backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+        val logoutButton: ImageButton = findViewById(R.id.img_logout)
+        val goToCartButton: ImageButton = findViewById(R.id.img_goto_cart)
+        // Logout Function
+        logoutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            // Redirect to login activity
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+        // Go to Cart function
+        goToCartButton.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
         }
     }
 

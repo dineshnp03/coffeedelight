@@ -2,9 +2,11 @@ package com.project1.coffeedelight
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,9 +38,25 @@ class CartActivity : AppCompatActivity() {
         recyclerViewCartItems.adapter = cartAdapter
 
         updateSummary()
-
+        if(cartItemList.isEmpty()) {
+            buttonCheckout.isEnabled = false
+            Toast.makeText(this,"No Products added to the Cart", Toast.LENGTH_SHORT).show()
+        } else {
+            buttonCheckout.isEnabled = true
+        }
         buttonCheckout.setOnClickListener {
-            startActivity(Intent(this, CheckoutActivity::class.java))
+            if(cartItemList.isEmpty()) {
+                Log.e("Empty Cart", "No Data available in the Cart")
+                Toast.makeText(this,"No Products added to the Cart", Toast.LENGTH_SHORT).show()
+            } else {
+                startActivity(Intent(this, CheckoutActivity::class.java))
+            }
+
+        }
+        // Navigates back to the previous Activity
+        val backButton = findViewById<ImageButton>(R.id.back_arrow)
+        backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
         }
 
         val logoutButton: ImageButton = findViewById(R.id.img_logout)
